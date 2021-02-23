@@ -1,23 +1,35 @@
 #include<iostream>
-#include<fstream>
-using namespace std;
+  #include<fstream>
+  #include<vector>
+  #include<sstream>
+  using namespace std;
 
 
-int main(void)
-{
+  int main(void){
 
-	string myText;
+  
 
-	ifstream MyReadFile("a_example");
+  string myText = " ";
+  string file;
 
-
-	while(getline(MyReadFile,myText)) {
-		
-		cout << myText << endl;
-	}
-
-	MyReadFile.close();
+  ifstream MyReadFile("a_example.txt");
 
 
-	return 0;
-}
+    while(getline(MyReadFile,file)){
+      myText = myText+file;
+      stringstream s(str);
+      string word;
+      
+
+
+
+    }
+
+    MyReadFile.close();
+
+    cout<<myText<<endl;
+
+
+  return 0;
+  }
+
