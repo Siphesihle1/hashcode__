@@ -1,0 +1,33 @@
+function sumto(arr, target)
+{
+	psum = 0
+	sindex = 1
+	sum = arr[psum]
+
+	
+	for (int k = 0; k < arr.length; k++)
+	{
+		for (int i = psum; i < arr.length; i++)
+		{
+			for (int j = sindex; j < arr.length; j++)
+			{
+				if (sum < target)
+				{
+					sum += arr[j]
+					numbers.push(arr[j])			
+				}
+				else if (sum > target)
+				{
+					sindex++
+					numbers.clear()
+					break
+				}
+				else
+				{
+					return numbers
+				}
+			}	
+		}
+	}
+	return numbers
+}

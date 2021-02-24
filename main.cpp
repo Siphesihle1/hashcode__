@@ -5,24 +5,22 @@
 using namespace std;
 
 
-int main(void){
 
+
+
+int main(void)
+{
 	string myText = " ";
 	string line;
 	vector<int> input;
 	vector<int> teams;
 	vector<vector<string>> pizzas;
-
 	ifstream MyReadFile("a_example");
-
 	getline(MyReadFile, line);
-
 	stringstream s(line);
-
 	int n;
-
-		int index = 1;
-		vector<int>teamNum;
+	int index = 1;
+	vector<int>teamNum;
 
 	while (s>>n)
 	{
@@ -48,27 +46,32 @@ int main(void){
 
 	MyReadFile.close();
 
-/*
-	for (vector<string> pizza : pizzas)
+
+	/*for (vector<string> pizza : pizzas)
 	{
 		for (string ingr : pizza)
 		{
 			cout << ingr << ' ';
 		}
 		cout << endl;
-	}
-*/
+	}*/
 
-	while(index !=3 ){
 
-		for(int i = 0;i< input[index];i++){
+	while (index != 4)
+	{
+
+		for(int i = 0; i < input[index]; i++)
+		{
 			teamNum.push_back(index+1);
 		}
 
+		index++;
 	}
-	for(int e=0;e<teamNum.size();e++){
-		cout<<teamNum[e]<<endl;
-	}
+
+	/*for (int e=0; e < teamNum.size(); e++)
+	{
+		cout << teamNum[e] << endl;
+	}*/
 
 	return 0;
 }
