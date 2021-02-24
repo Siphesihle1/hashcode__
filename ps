@@ -1,16 +1,18 @@
 function sumto(arr, target)
 {
-	psum = 0
+	findex = 0
 	sindex = 1
 	sum = arr[psum]
 
 	
-	for (int k = 0; k < arr.length; k++)
+	
+	for (int i = findex; i < arr.length; i++)
 	{
-		for (int i = psum; i < arr.length; i++)
+		for (int j = 1; j < arr.length; j++) 
 		{
-			for (int j = sindex; j < arr.length; j++)
+			for (int k = sindex; k < arr.length; k++)
 			{
+			
 				if (sum < target)
 				{
 					sum += arr[j]
@@ -20,13 +22,15 @@ function sumto(arr, target)
 				{
 					sindex++
 					numbers.clear()
+					sum = 0
 					break
 				}
 				else
 				{
 					return numbers
 				}
-			}	
+				
+			}
 		}
 	}
 	return numbers
