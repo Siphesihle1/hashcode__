@@ -15,31 +15,45 @@ int getsum(vector<int> v)
 	return psum;
 }
 
+void printvec(vector<int> v)
+{
+	for (int i : v)
+	{
+		cout << i << " ";
+	}
+	cout << endl;
+}
+
 vector<int> sumfunc(vector<int>ipt,int target)
 {
 	
 	vector<int>final;
-	
+	int sum = 0;
+
 	if (getsum(ipt) < target) return ipt;
 
 	for(int findex = 0; findex < ipt.size(); findex++)
 	{
 		for (int sindex = findex + 1; sindex < ipt.size(); sindex++)
 		{
-			int sum = ipt[findex];
+			sum = ipt[findex];
 			final.push_back(ipt[findex]);
 			for (int j = sindex; j < ipt.size(); j++)
 			{
-				if(sum < target)
+				if (sum < target)
 				{
 					sum += ipt[j];
 					final.push_back(ipt[j]);
+					printvec(final);
 
 				}
 				else if (sum > target)
 				{
-					final.erase(final.begin(), final.begin() + final.size());
-					sum = 0;
+					//cout << sum << " " << target << endl;
+					//final.erase(final.begin(), final.begin() + final.size());
+					//final.clear();
+					cout << "size = " << final.size() << endl;
+					//sum = 0;
 					break;
 
 				}
@@ -49,6 +63,9 @@ vector<int> sumfunc(vector<int>ipt,int target)
 				}
 
 			}
+
+			sum = 0;
+			final.clear();
 		}
 
 	}
