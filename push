@@ -5,4 +5,5 @@ spawn git push
 expect "Username for 'https://github.com'"
 send "Siphesihle1\r"
 expect "Password for 'https://github.com'"
-send "ClogreeN0829#@\r\r"
+send "ClogreeN0829#@\r"
+interact
