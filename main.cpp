@@ -2,12 +2,80 @@
 #include<fstream>
 #include<vector>
 #include<sstream>
+#include<map>
+#include<string>
 using namespace std;
 
+//method for gettting frequency
+  map<string,int> getpizahz(vector<vector<string>pizzas)
+  {
+    map<string,int>pizzahz;
+    string ingr;
+
+    for (vector<string> pizza : pizzas)
+  	{
+  		for (string ingr : pizza)
+  		{
+        //pizzahz.insert({pizza,0});
+  			pizzahz[ingr]++;
+  		}
+
+  	}
+
+    return pizzahz;
+  }
+  /*for(vector<string> pizza : pizzas)
+    {
+      ingr = pizzas
+
+    }
+
+*/
+
+int getsum(vector<int> v)
+{
+	int psum = 0;
+	for (int i : v)
+	{
+		psum += i;
+	}
+	return psum;
+}
 
 
+vector<int> sumfunc(vector<int>ipt,int target)
+{
 
+	vector<int>final;
+	int sum = 0;
 
+	if (getsum(ipt) < target) return ipt;
+
+	for(int findex = 0; findex < ipt.size(); findex++)
+	{
+		for (int sindex = findex + 1; sindex < ipt.size(); sindex++)
+		{
+			sum = ipt[findex];
+			final.push_back(ipt[findex]);
+
+			if (sum == target) return final;
+
+			for (int j = sindex; j < ipt.size(); j++)
+			{
+				sum += ipt[j];
+				final.push_back(ipt[j]);
+
+				if (sum > target) break;
+				if (sum == target) return final;
+			}
+
+			sum = 0;
+			final.clear();
+		}
+
+	}
+	return {};
+}
 int main(void)
 {
 	string myText = " ";
@@ -72,6 +140,14 @@ int main(void)
 	{
 		cout << teamNum[e] << endl;
 	}*/
+	map<strings,int>ans = getpizahz(pizzas);
+
+
+	for(auto itr = ans.begin();itr != ans.end();++itr ){
+		cout << itr->first
+             << '\t' << itr->second << '\n';
+
+	}
 
 	return 0;
 }
