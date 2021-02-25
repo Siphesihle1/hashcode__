@@ -6,29 +6,41 @@
 #include<string>
 using namespace std;
 
+string cpystr(string source, int start, int end)
+{
+	string dest;
+
+	for (int i = start; i <= end; i++)
+	{
+		dest += source[i];
+	}
+
+	return dest;
+}
+
 //method for gettting frequency
-  map<string,int> getpizahz(vector<vector<string>pizzas)
+map<string,int> getpizahz(vector<vector<string>>pizzas)
+{
+	map<string,int>pizzahz;
+	string ingr;
+
+	for (vector<string> pizza : pizzas)
+	{
+		for (string ingr : pizza)
+		{
+			//pizzahz.insert({pizza,0});
+			pizzahz[ingr]++;
+		}
+
+	}
+
+	return pizzahz;
+}
+/*for(vector<string> pizza : pizzas)
   {
-    map<string,int>pizzahz;
-    string ingr;
+  ingr = pizzas
 
-    for (vector<string> pizza : pizzas)
-  	{
-  		for (string ingr : pizza)
-  		{
-        //pizzahz.insert({pizza,0});
-  			pizzahz[ingr]++;
-  		}
-
-  	}
-
-    return pizzahz;
   }
-  /*for(vector<string> pizza : pizzas)
-    {
-      ingr = pizzas
-
-    }
 
 */
 
@@ -98,12 +110,12 @@ int main(void)
 	for (int i = 0; i < input[0]; i++)
 	{
 		getline(MyReadFile, line);
-		stringstream s(line);
 		string token;
 		vector<string> ingr;
 		int n;
-
-		s >> n;
+		
+		line = cpystr(line, 2, line.length() - 1);
+		stringstream s(line);
 
 		while (getline(s, token, ' '))
 		{
@@ -115,14 +127,15 @@ int main(void)
 	MyReadFile.close();
 
 
-	/*for (vector<string> pizza : pizzas)
-	{
-		for (string ingr : pizza)
-		{
-			cout << ingr << ' ';
-		}
-		cout << endl;
-	}*/
+	for (vector<string> pizza : pizzas)
+	  {
+	  for (string ingr : pizza)
+	  {
+	  cout << ingr;
+	  }
+	  cout << " " << pizza.size();
+	  cout << endl;
+	  }
 
 
 	while (index != 4)
@@ -137,15 +150,15 @@ int main(void)
 	}
 
 	/*for (int e=0; e < teamNum.size(); e++)
-	{
-		cout << teamNum[e] << endl;
-	}*/
-	map<strings,int>ans = getpizahz(pizzas);
+	  {
+	  cout << teamNum[e] << endl;
+	  }*/
+	map<string,int>ans = getpizahz(pizzas);
 
 
 	for(auto itr = ans.begin();itr != ans.end();++itr ){
 		cout << itr->first
-             << '\t' << itr->second << '\n';
+			<< '\t' << itr->second << '\n';
 
 	}
 
