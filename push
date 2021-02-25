@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/expect
 
-git add *
-git commit -m "****"
+spawn ./init
 spawn git push
 expect "Username for 'https://github.com'"
 send "Siphesihle1\r"
