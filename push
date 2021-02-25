@@ -2,8 +2,8 @@
 
 spawn ./init
 spawn git push
-expect "Username for 'https://github.com'"
+expect "Username"
 send "Siphesihle1\r"
-expect "Password for 'https://github.com'"
+expect "Password"
 send "ClogreeN0829#@\r"
 interact
