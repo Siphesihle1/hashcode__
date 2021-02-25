@@ -4,8 +4,8 @@ spawn git add *
 spawn git commit -m "***"
 spawn git push
 expect "Username"
-send "{username}\r"
+send "SobaMask3\r"
 expect "Password"
-send "{password}\r"
+send "JBpH93J3\r"
 interact
 
