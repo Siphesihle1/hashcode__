@@ -1,9 +1,10 @@
 #!/usr/bin/expect
 
-spawn ./init
+spawn git add *
+spawn git commit -m "***"
 spawn git push
 expect "Username"
-send "Siphesihle1\r"
+send "{username}\r"
 expect "Password"
-send "ClogreeN0829#@\r"
+send "{password}\r"
 interact
