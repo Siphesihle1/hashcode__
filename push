@@ -8,3 +8,4 @@ send "{username}\r"
 expect "Password"
 send "{password}\r"
 interact
+
