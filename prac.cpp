@@ -38,30 +38,16 @@ vector<int> sumfunc(vector<int>ipt,int target)
 		{
 			sum = ipt[findex];
 			final.push_back(ipt[findex]);
+
+			if (sum == target) return final;
+
 			for (int j = sindex; j < ipt.size(); j++)
 			{
-				if (sum < target)
-				{
-					sum += ipt[j];
-					final.push_back(ipt[j]);
-					printvec(final);
+				sum += ipt[j];
+				final.push_back(ipt[j]);
 
-				}
-				else if (sum > target)
-				{
-					//cout << sum << " " << target << endl;
-					//final.erase(final.begin(), final.begin() + final.size());
-					//final.clear();
-					cout << "size = " << final.size() << endl;
-					//sum = 0;
-					break;
-
-				}
-				else
-				{
-					return final;
-				}
-
+				if (sum > target) break;
+				if (sum == target) return final;
 			}
 
 			sum = 0;
@@ -80,7 +66,7 @@ vector<int> sumfunc(vector<int>ipt,int target)
 int main(void)
 {
 	int sum;
-	vector<int> v = {2, 2, 3, 3, 3, 4};
+	vector<int> v = {2, 3, 3, 4};
 	vector<int> v2;
 	cout << "Enter sum" << endl;
 	cin>>sum;
