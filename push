@@ -1,0 +1,10 @@
+#!/bin/bash
+
+git add *
+git commit -m "****"
+spawn git push
+expect "Username for 'https://github.com'"
+send "Siphesihle1\r"
+expect "Password for 'https://github.com'"
+send "ClogreeN0829#@\r"
+interact
