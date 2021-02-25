@@ -127,7 +127,7 @@ int main(void)
 	MyReadFile.close();
 
 
-	for (vector<string> pizza : pizzas)
+	/*for (vector<string> pizza : pizzas)
 	  {
 	  for (string ingr : pizza)
 	  {
@@ -136,7 +136,7 @@ int main(void)
 	  cout << " " << pizza.size();
 	  cout << endl;
 	  }
-
+	*/
 
 	while (index != 4)
 	{
@@ -153,14 +153,14 @@ int main(void)
 	  {
 	  cout << teamNum[e] << endl;
 	  }*/
-	map<string,int>ans = getpizahz(pizzas);
+	/*map<string,int>ans = getpizahz(pizzas);
 
 
 	for(auto itr = ans.begin();itr != ans.end();++itr ){
 		cout << itr->first
 			<< '\t' << itr->second << '\n';
 
-	}
+	}*/
 
 	return 0;
 }
