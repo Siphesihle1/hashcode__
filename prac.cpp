@@ -66,7 +66,7 @@ vector<int> sumfunc(vector<int>ipt,int target)
 int main(void)
 {
 	int sum;
-	vector<int> v = {2, 3, 3, 4};
+	vector<int> v = {2, 2, 3, 3, 3, 4};
 	vector<int> v2;
 	cout << "Enter sum" << endl;
 	cin>>sum;
